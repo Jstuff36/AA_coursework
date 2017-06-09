@@ -1,0 +1,1 @@
+load "board.rb"; load "display.rb"; load "cursor.rb"; board = Board.new; display = Display.new(board); board.populate
