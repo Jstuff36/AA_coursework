@@ -2,6 +2,7 @@ class LinksController < ApplicationController
 
   def new
     if logged_in?
+      @link = Link.new
       render :new
     else
       redirect_to new_session_url
@@ -36,7 +37,7 @@ class LinksController < ApplicationController
   end
 
   def show
-
+    @link = Link.find(params[:id])
     if logged_in?
       render :show
     else
@@ -46,6 +47,7 @@ class LinksController < ApplicationController
   end
 
   def edit
+    @link = Link.find(params[:id])
     if logged_in?
       render :edit
     else
