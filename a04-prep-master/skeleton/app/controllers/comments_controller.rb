@@ -7,10 +7,11 @@ class CommentsController < ApplicationController
   def create
     @comment = Comment.new(comment_params)
     if logged_in?
+      @comment.user_id = current_user.id
       if @comment.save
         redirect_to link_url(@comment.link_id)
       else
-        flash.now[:errors] = @comment.errors.full_messages
+        flash[:errors] = @comment.errors.full_messages
         redirect_to link_url(@comment.link_id)
       end
     else
