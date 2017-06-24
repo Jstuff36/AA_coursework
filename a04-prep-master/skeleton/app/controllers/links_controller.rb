@@ -51,15 +51,18 @@ class LinksController < ApplicationController
     if logged_in?
       render :edit
     else
+      Flash.now[:errors] = "Please Log In"
       redirect_to new_session_url
     end
   end
 
   def update
-    @link = Link.find(params[:id])
-    if current_user.id == @link.user_id
-      @link.title = params[:link][:title]
-      @link.save
+    @link = current_user.links.find(params[:id])
+    if @link.update_attributes(link_params)
+      redirect_to link_url(@link)
+    else
+      flash.now[:errors] = @link.errors.full_messages
+      render :edit
     end
 
   end

@@ -11,7 +11,7 @@ class SessionsController < ApplicationController
       redirect_to links_url
     else
       flash[:errors] = ["Invalid username or password"]
-      redirect_to new_session_url
+      render :new
     end
   end
 
