@@ -6,7 +6,6 @@ class CommentsController < ApplicationController
 
   def create
     @comment = Comment.new(comment_params)
-    p params
     if logged_in?
       if @comment.save
         redirect_to link_url(@comment.link_id)
@@ -14,6 +13,16 @@ class CommentsController < ApplicationController
         flash.now[:errors] = @comment.errors.full_messages
         redirect_to link_url(@comment.link_id)
       end
+    else
+      redirect_to new_session_url
+    end
+  end
+
+  def destroy
+    @comment = Comment.find(params[:id])
+    if logged_in?
+      @comment.destroy
+      redirect_to link_url(@comment.link_id)
     else
       redirect_to new_session_url
     end
