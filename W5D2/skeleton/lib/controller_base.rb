@@ -19,6 +19,10 @@ class ControllerBase
 
   # Set the response status code and header
   def redirect_to(url)
+    raise "doube render error" if already_built_response?
+    res['Location'] = url
+    res.status = 302
+    @already_built_response = true
   end
 
   # Populate the response with content.
