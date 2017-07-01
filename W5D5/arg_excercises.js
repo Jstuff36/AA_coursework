@@ -68,4 +68,4 @@ function curriedSum(numArgs) {
 }
 
 let total = curriedSum(4);
-sum(5)(30)(20)(1);
+console.log(total(5)(30)(20)(1));
