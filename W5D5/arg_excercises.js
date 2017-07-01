@@ -85,6 +85,18 @@ Function.prototype.curry = function(numArgs) {
 };
 
 //Do the above but with apply
+Function.prototype.curryApply = function(numArgs) {
+  let argsGoHere = [];
+  let fn = this;
+  return function argGrabber(arg) {
+    argsGoHere.push(arg);
+    if (argsGoHere.length === numArgs) {
+      return fn.apply(null, argsGoHere);
+    } else {
+      return argGrabber;
+    }
+  };
+};
 
 let multiply = function(...args) {
   let multiplyTotal = 1;
@@ -94,3 +106,4 @@ let multiply = function(...args) {
   return multiplyTotal;
 };
 console.log(multiply.curry(3)(6)(3)(7));
+console.log(multiply.curryApply(2)(3)(4));
