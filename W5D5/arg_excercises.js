@@ -69,3 +69,28 @@ function curriedSum(numArgs) {
 
 let total = curriedSum(4);
 console.log(total(5)(30)(20)(1));
+
+//Create a curry function that creates an array of args
+Function.prototype.curry = function(numArgs) {
+  let argsGoHere = [];
+  let fn = this;
+  return function argGrabber(arg) {
+    argsGoHere.push(arg);
+    if (argsGoHere.length === numArgs) {
+      return fn(...argsGoHere);
+    } else {
+      return argGrabber;
+    }
+  };
+};
+
+//Do the above but with apply
+
+let multiply = function(...args) {
+  let multiplyTotal = 1;
+  args.forEach( (el) => {
+    multiplyTotal *= el;
+  });
+  return multiplyTotal;
+};
+console.log(multiply.curry(3)(6)(3)(7));
