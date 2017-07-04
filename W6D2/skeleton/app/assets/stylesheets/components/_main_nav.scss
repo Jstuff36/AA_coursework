@@ -1,10 +1,14 @@
 .main-nav {
-
+  display: flex;
+  justify-content: space-between;
 }
 
 .left-nav > ul,
 .right-nav > ul {
-
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .left-nav > ul > li {
@@ -12,11 +16,9 @@
 }
 
 .right-nav > ul > li {
-
 }
 
 .right-nav > ul > li:last-of-type {
-
 }
 
 .left-nav > ul > li:hover,
@@ -28,6 +30,9 @@
 
 }
 
+i.fa-cog {
+  font-size: 25px;
+}
 
 .right-nav i {
 
