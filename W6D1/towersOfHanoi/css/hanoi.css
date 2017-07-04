@@ -1,0 +1,38 @@
+ul.tower {
+    width: 200px;
+    height: 79px;
+    float: left;
+    margin: 10px;
+    border-bottom: 10px solid;
+    padding: 0;
+    vertical-align: bottom;
+}
+
+
+li.size-1 {
+    width: 50px;
+    height: 25px;
+    background: red;
+    border-radius: 10px;
+    list-style: none;
+    margin: 0 auto;
+}
+
+li.size-2 {
+    width: 100px;
+    height: 25px;
+    background: blue;
+    border-radius: 10px;
+    list-style: none;
+    margin: 0 auto;
+}
+
+li.size-3 {
+    width: 150px;
+    height: 25px;
+    background: green;
+    border-radius: 10px;
+    list-style: none;
+    margin: 0 auto;
+    vertical-align: bottom;
+}
