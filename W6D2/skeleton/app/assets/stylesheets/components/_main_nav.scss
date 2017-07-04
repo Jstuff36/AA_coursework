@@ -9,13 +9,16 @@
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
+  padding-top: 10px
 }
 
 .left-nav > ul > li {
-
+  margin: 5px;
+  font-size: 20px;
 }
 
 .right-nav > ul > li {
+  margin: 5px
 }
 
 .right-nav > ul > li:last-of-type {
@@ -27,11 +30,20 @@
 }
 
 .left-nav span {
-
+  margin: 10px;
+  background-color: #f7f7f5;
+  padding: 3px;
+  border-radius: 10px;
 }
 
 i.fa-cog {
-  font-size: 25px;
+  font-size: 20px;
+  background-color: $lightest-gray;
+  padding: 5px;
+}
+
+i.fa-cog:hover {
+  background-color: $light-gray;
 }
 
 .right-nav i {
