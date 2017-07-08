@@ -17,9 +17,9 @@ class Weather extends React.Component {
         console.log(request.responseText);
         if (request.readyState == XMLHttpRequest.DONE ) {
           debugger;
-
+          let that = this;
           if (request.status == 200) {
-            this.setState({weather: request});
+            this.setState({weather: request}).bind(that);
           } else {
             alert("asdf");
           }
@@ -28,7 +28,7 @@ class Weather extends React.Component {
       request.open('GET', apiReq, true);
       request.send();
 
-    }.bind(this));
+    });
   }
 
   componentWillUnmount() {
