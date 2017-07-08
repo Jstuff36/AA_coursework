@@ -1,0 +1,28 @@
+@font-face {font-family:"STARWARS";src:url("STARWARS.eot?") format("eot"),url("STARWARS.woff") format("woff"),url("STARWARS.ttf") format("truetype"),url("STARWARS.svg#STARWARS") format("svg");font-weight:normal;font-style:normal;}
+html {
+  background-image: url(http://www.globalo.com/content/uploads/2015/12/darth-vader.jpg);
+}
+.clock {
+  font-family: "STARWARS";
+  font-size: 64px;
+}
+
+.date {
+  font-family: "STARWARS";
+  font-size: 64px;
+}
+
+div {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  background-image: http://www.globalo.com/content/uploads/2015/12/darth-vader.jpg;
+}
+
+span {
+  color: red;
+  background-color: black;
+  width: 650px;
+}
