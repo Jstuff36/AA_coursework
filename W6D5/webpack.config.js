@@ -5,7 +5,7 @@ module.exports = {
   entry: "./widgets.jsx",
   output: {
     path: path.resolve(__dirname),
-    filename: "bundle.js"
+    filename: "./bundle.js"
   },
   module: {
     loaders: [
