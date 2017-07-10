@@ -4,8 +4,7 @@
   "main": "widgets.jsx",
   "scripts": {
     "webpack": "webpack --watch",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack --watch"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",

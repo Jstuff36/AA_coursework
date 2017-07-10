@@ -31,7 +31,7 @@ class Clock extends React.Component {
           TIME: {date.getHours()}:{(date.getMinutes() < 10 ? '0' :'') + date.getMinutes() }:{(date.getSeconds() < 10 ? '0' :'') + date.getSeconds() }
         </span>
         <span className="date">
-          DATE: {date.getMonth()}-{date.getDate()}-{date.getFullYear()}
+          DATE: {date.getMonth()+1}-{date.getDate()}-{date.getFullYear()}
         </span>
       </div>
     );
