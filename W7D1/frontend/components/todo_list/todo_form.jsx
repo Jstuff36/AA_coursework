@@ -17,17 +17,17 @@ class TodoForm extends React.Component {
   handleClick(event) {
     event.preventDefault();
 
-    this.props.receiveTodo({
+    this.props.createTodo({
       id: uniqueId(),
       title: this.state.title,
       body: this.state.body,
       done: this.state.done
-    });
+    }).then( () =>
     this.setState({
       title: "",
       body: "",
       done: false
-    });
+    }));
   }
 
   handleChange(key) {
