@@ -9,9 +9,5 @@ const configureStore = () => (
     applyMiddleware(thunk, logger)
   )
 );
-// 
-// const configureStore = function() {
-//   return createStore(rootReducer, applyMiddleware(logger));
-// };
 
 export default configureStore;
